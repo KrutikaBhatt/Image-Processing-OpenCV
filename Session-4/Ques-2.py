@@ -1,4 +1,4 @@
-mport cv2
+import cv2
 import numpy as np
 arr=np.zeros((2,2),int)
 i=0
