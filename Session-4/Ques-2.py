@@ -1,14 +1,14 @@
 mport cv2
 import numpy as np
 arr=np.zeros((2,2),int)
-index=0
+i=0
 img=cv2.imread('Exg.jpg')
 def crop_image(event,x,y,flags,param):
     global arr
     global index
-    if index<2:
-        arr[index]=[x,y]
-        index+=1
+    if i<2:
+        arr[i]=[x,y]
+        i+=1
         if np.all(arr):
             crop_done()
 
@@ -27,7 +27,8 @@ def crop_done():
         crop=img[arr[0][1]:arr[1][1],arr[1][0]:arr[1][1]]
 
     cv2.imshow('Cropped',crop)
-    cv2.waitKey(0)
+    
+    
 cv2.namedWindow('Frame')
 cv2.setMouseCallback('Frame',crop_image)
 cv2.imshow('Frame',img)
