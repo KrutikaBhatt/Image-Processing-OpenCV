@@ -19,5 +19,5 @@ gauss_blur=cv2.GaussianBlur(CLOSE,(25,25),2)
 canny=cv2.Canny(gauss_blur,80,255)
 
 
-cv2.imshow('Gauss',canny)
+cv2.imshow('Edge-Frame',canny)
 cv2.waitKey(0)
