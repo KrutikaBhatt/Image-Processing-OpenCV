@@ -6,8 +6,8 @@ cap=cv2.VideoCapture(0)
 
 def mouse(event,x,y,flags,param):
 	if event==cv2.EVENT_LBUTTONDOWN:
-		print(x,y) #This prints BGR values as asked 
-		print(frame[y,x])
+		print(x,y) #This gives x and y coordinate
+		print(frame[y,x]) #This gives BGR values
 
 cv2.namedWindow('img')
 cv2.setMouseCallback('img',mouse)
