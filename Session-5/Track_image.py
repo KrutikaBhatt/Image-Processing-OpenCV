@@ -8,7 +8,7 @@ index=0
 #Capturing live video from webcam
 cam=cv2.VideoCapture(0)
 
-def double_click(event,x,y,flags,param):#This funtion gets the points of cropping in array
+def double_click(event,x,y,flags,param):#This funtion gets the points to crop in array
     global array,index
     global define
     if event==cv2.EVENT_LBUTTONDOWN:
