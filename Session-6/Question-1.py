@@ -4,7 +4,7 @@ import numpy as np
 # To detect edges in the image as per the required output 
 #Step1: Use Thresholding to view image properly as it has Two images
 #Step2: Dilate the image and erase all noise and written stuff
-#Step3: Smoothen the image using Gaussian Blur 
+#Step3: Smooth the image using Gaussian Blur 
 # Use canny for final Edge detection
 
 image=cv2.imread('Screen.png') 
