@@ -5,7 +5,7 @@ i=0
 img=cv2.imread('Exg.jpg')
 def crop_image(event,x,y,flags,param):
     global arr
-    global index
+    global i
     if i<2:
         arr[i]=[x,y]
         i+=1
