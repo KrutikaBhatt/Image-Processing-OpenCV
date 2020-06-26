@@ -110,7 +110,7 @@ def callback(*args):
         grey=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
         if option==filter_option[0]:
-            canny=cv2.Canny(grey,12,60)
+            canny=cv2.Canny(grey,100,200)
             cv2.imshow('Frame',canny)
             cv2.waitKey(20)
             display=canny
@@ -230,7 +230,8 @@ def get_four_points(points):
 
 def warp_image(event,x,y,flags,param):
     global arr
-    global filename,display,img
+    global filename,display
+    img=cv2.imread(filename)
     
     if event==cv2.EVENT_LBUTTONDOWN:
         arr.append((x,y))
@@ -246,8 +247,9 @@ def warp_image(event,x,y,flags,param):
 
 def auto_wrap():
     global filename
-    global display,img
-
+    global display
+    
+    img=cv2.imread(filename)
     image=img.copy()
     grey=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     filter=cv2.bilateralFilter(grey,9,75,75)
@@ -278,13 +280,13 @@ def auto_wrap():
         response=tk.messagebox.showinfo("Message","Auto-wrap is not available\nPlease select Manual wrap")
 
 def manual_wrap():
-    global filename,img
+    global filename
 
     if os.path.exists(filename):
-        
+        image=cv2.imread(filename)
         cv2.namedWindow('select')
         cv2.setMouseCallback('select',warp_image)
-        cv2.imshow('select',img)
+        cv2.imshow('select',image)
         cv2.waitKey(10000)
     else:
         response=tk.messagebox.showinfo("Message","Please select image")
