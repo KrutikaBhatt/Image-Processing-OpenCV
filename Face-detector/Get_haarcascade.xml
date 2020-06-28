@@ -1,0 +1,2 @@
+You need to download the trained classsifier XML file from https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml
+Save the file in your working directory
